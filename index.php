@@ -19,13 +19,13 @@
         foreach ($films as $film):
         ?>
             <tr>
-                <td><?= htmlspecialchars($film['titre']) ?></td>
+                <td><a href="film.php?id=<?= htmlspecialchars($film["film_id"]) ?>" class="movie__link"><?= htmlspecialchars($film['titre']) ?></a></td>
                 <td><?= htmlspecialchars($film['realisateur']) ?></td>
                 <td><?= $film['annee'] ?></td>
                 <td><?= htmlspecialchars($film['genre_nom']) ?></td>
                 <td>
                     <a href="modifier.php?id=<?= htmlspecialchars($film['film_id']) ?>" class="primary__button">Modifier</a>
-                    <a href="supprimer.php?id=<?= htmlspecialchars($film['film_id']) ?>" class="primary__button" onclick="return confirm('Supprimer ce film ?')">Supprimer</a>
+                    <a href="supprimer.php?id=<?= htmlspecialchars($film['film_id']) ?>" class="secondary__button" onclick="return confirm('Supprimer ce film ?')">Supprimer</a>
                 </td>
             </tr>
         <?php endforeach; ?>

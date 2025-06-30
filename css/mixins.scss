@@ -4,21 +4,69 @@
 
 @mixin media-min($_min-width) {
   @media screen and (min-width: $_min-width) {
-    &{ @content; }
+    & {
+      @content;
+    }
   }
 }
 
 // FLEX PRESETS
 
 $flex-presets: (
-    column-center: (flex, column, center, center),
-    column-start: (flex, column, flex-start, flex-start),
-    column-center-start: (flex, column, flex-start, center),
-    column-start-end: (flex, column, flex-start, flex-end),
-    column-sb: (flex, column, space-between, center),
-    row-center: (flex, row, center, center),
-    row-start: (flex, row, flex-start, center),
-    row-sb: (flex, row, space-between, center),
+  column-center: (
+    flex,
+    column,
+    center,
+    center,
+  ),
+  column-start: (
+    flex,
+    column,
+    flex-start,
+    flex-start,
+  ),
+  column-center-start: (
+    flex,
+    column,
+    flex-start,
+    center,
+  ),
+  column-start-end: (
+    flex,
+    column,
+    flex-start,
+    flex-end,
+  ),
+  column-sb: (
+    flex,
+    column,
+    space-between,
+    center,
+  ),
+  row-center: (
+    flex,
+    row,
+    center,
+    center,
+  ),
+  row-start: (
+    flex,
+    row,
+    flex-start,
+    center,
+  ),
+  row-center-start: (
+    flex,
+    row,
+    center,
+    flex-start,
+  ),
+  row-sb: (
+    flex,
+    row,
+    space-between,
+    center,
+  ),
 );
 
 @mixin flex-preset($preset) {
@@ -32,8 +80,48 @@ $flex-presets: (
 // TEXT STYLES
 
 $text-presets: (
-    primary-title: (variables.$milkyway, 'Inter', 8rem, uppercase, .05rem),
-    secondary-title: (variables.$milkyway, 'Inter', 6rem, uppercase, .05rem),
+  primary-title: (
+    variables.$milkyway,
+    "Inter",
+    8rem,
+    uppercase,
+    0.05rem,
+  ),
+  secondary-title: (
+    variables.$milkyway,
+    "Inter",
+    6rem,
+    uppercase,
+    0.05rem,
+  ),
+  third-title: (
+    variables.$milkyway,
+    "Inter",
+    3rem,
+    none,
+    0.05rem,
+  ),
+  movie-title: (
+    variables.$milkyway,
+    "Inter",
+    4rem,
+    none,
+    0.08rem,
+  ),
+  movie-link: (
+    variables.$milkyway,
+    "Inter",
+    1.9rem,
+    none,
+    0,
+  ),
+  feature: (
+    variables.$milkyway,
+    "Inter",
+    1.5rem,
+    uppercase,
+    0.08rem,
+  ),
 );
 
 @mixin text-preset($preset) {
@@ -48,8 +136,51 @@ $text-presets: (
 // BUTTONS
 
 $button-presets: (
-    primary-button: (variables.$milkyway, 'Inter', 1.2rem, uppercase, 0.05rem, transparent, none, 1.2rem 4rem, 800, center, 2.5rem, all 0.3s linear, solid .1rem variables.$milkyway),
-    menu-link: (variables.$milkyway, 'Inter', 1.3rem, uppercase, 0.05rem, transparent, none, 1.2rem 4rem, 800, center, 2.5rem, all 0.3s linear, none),
+  primary-button: (
+    variables.$midnight,
+    "Inter",
+    1.2rem,
+    uppercase,
+    0.05rem,
+    variables.$milkyway,
+    none,
+    1.2rem 4rem,
+    800,
+    center,
+    2.5rem,
+    all 0.3s linear,
+    none,
+  ),
+  secondary-button: (
+    variables.$milkyway,
+    "Inter",
+    1.2rem,
+    uppercase,
+    0.05rem,
+    transparent,
+    none,
+    1.2rem 4rem,
+    800,
+    center,
+    2.5rem,
+    all 0.3s linear,
+    solid 0.1rem variables.$milkyway,
+  ),
+  menu-link: (
+    variables.$milkyway,
+    "Inter",
+    1.3rem,
+    uppercase,
+    0.05rem,
+    transparent,
+    none,
+    1.2rem 4rem,
+    800,
+    center,
+    2.5rem,
+    all 0.3s linear,
+    none,
+  ),
 );
 
 @mixin button-preset($preset) {
@@ -70,8 +201,21 @@ $button-presets: (
 }
 
 $button-hover-presets: (
-    primary-button: (variables.$ruby, solid .1rem variables.$ruby, variables.$milkyway),
-    menu-link: (none, none, variables.$ruby),
+  primary-button: (
+    variables.$ruby,
+    none,
+    variables.$milkyway,
+  ),
+  secondary-button: (
+    variables.$ruby,
+    solid 0.1rem variables.$ruby,
+    variables.$milkyway,
+  ),
+  menu-link: (
+    none,
+    none,
+    variables.$ruby,
+  ),
 );
 
 @mixin button-hover-preset($preset) {

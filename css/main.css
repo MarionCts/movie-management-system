@@ -15,6 +15,10 @@ body {
   padding: 2rem;
 }
 
+button {
+  cursor: pointer;
+}
+
 h1 {
   color: #e7e5f1;
   font-family: "Inter";
@@ -29,6 +33,18 @@ h1 {
   font-size: 6rem;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
+}
+
+.third__title {
+  color: #e7e5f1;
+  font-family: "Inter";
+  font-size: 3rem;
+  text-transform: none;
+  letter-spacing: 0.05rem;
+}
+
+.italic__accent {
+  font-style: italic;
 }
 
 .primary__menu {
@@ -64,7 +80,45 @@ h1 {
   color: #b9072e;
 }
 
+.movie__link {
+  color: #e7e5f1;
+  font-family: "Inter";
+  font-size: 1.9rem;
+  text-transform: none;
+  letter-spacing: 0;
+  text-decoration: none;
+  padding: 0.8rem;
+  border-bottom: 0.1rem solid #e7e5f1;
+  font-weight: 700;
+  transition: all linear 0.3s;
+}
+.movie__link:hover {
+  color: #b9072e;
+  border-bottom: 0.1rem solid #b9072e;
+}
+
 .primary__button {
+  color: #26252d;
+  font-family: "Inter";
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  background-color: #e7e5f1;
+  text-decoration: none;
+  padding: 1.2rem 4rem;
+  font-weight: 800;
+  text-align: center;
+  border-radius: 2.5rem;
+  transition: all 0.3s linear;
+  border: none;
+}
+.primary__button:hover {
+  background-color: #b9072e;
+  border: none;
+  color: #e7e5f1;
+}
+
+.secondary__button {
   color: #e7e5f1;
   font-family: "Inter";
   font-size: 1.2rem;
@@ -79,7 +133,7 @@ h1 {
   transition: all 0.3s linear;
   border: solid 0.1rem #e7e5f1;
 }
-.primary__button:hover {
+.secondary__button:hover {
   background-color: #b9072e;
   border: solid 0.1rem #b9072e;
   color: #e7e5f1;
@@ -123,7 +177,25 @@ header img {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 15%;
+  margin-top: 13%;
+  gap: 2rem;
+}
+
+.search__bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+#search {
+  width: 50rem;
+  height: 4rem;
+  border: none;
+  padding: 1rem;
+  border-radius: 2rem;
 }
 
 .movies__list__container {
@@ -150,6 +222,9 @@ header img {
 .movies__list td {
   font-size: 1.8rem;
 }
+.movies__list .primary__button {
+  margin-right: 1rem;
+}
 
 .table__header {
   border-bottom: solid 0.1rem #e7e5f1;
@@ -162,6 +237,30 @@ header img {
   margin-top: 5rem;
 }
 
+.update__movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0 8rem;
+}
+.update__movie .secondary__title {
+  margin: 5rem;
+}
+
+.update__text {
+  margin: 0 0 5rem;
+  text-align: center;
+}
+.update__text h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.update__text h5 {
+  font-size: 2.5rem;
+}
+
 .add__movie {
   margin: 8rem;
 }
@@ -170,42 +269,116 @@ header img {
   margin-bottom: 4rem;
 }
 
-.add__movie__container {
+.add__movie__container, .update__movie {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.add__movie__container .add__movie__form {
+.add__movie__container .add__movie__form, .add__movie__container .update__form, .update__movie .add__movie__form, .update__movie .update__form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
 }
-.add__movie__container .add__movie__form .add__movie__form,
-.add__movie__container .add__movie__form .form__input {
+.add__movie__container .add__movie__form .add__movie__form, .add__movie__container .add__movie__form .update__form,
+.add__movie__container .add__movie__form .form__input, .add__movie__container .update__form .add__movie__form, .add__movie__container .update__form .update__form,
+.add__movie__container .update__form .form__input, .update__movie .add__movie__form .add__movie__form, .update__movie .add__movie__form .update__form,
+.update__movie .add__movie__form .form__input, .update__movie .update__form .add__movie__form, .update__movie .update__form .update__form,
+.update__movie .update__form .form__input {
   width: 45rem;
 }
-.add__movie__container .add__movie__form .add__movie__form label,
-.add__movie__container .add__movie__form .form__input label {
+.add__movie__container .add__movie__form .add__movie__form label, .add__movie__container .add__movie__form .update__form label,
+.add__movie__container .add__movie__form .form__input label, .add__movie__container .update__form .add__movie__form label, .add__movie__container .update__form .update__form label,
+.add__movie__container .update__form .form__input label, .update__movie .add__movie__form .add__movie__form label, .update__movie .add__movie__form .update__form label,
+.update__movie .add__movie__form .form__input label, .update__movie .update__form .add__movie__form label, .update__movie .update__form .update__form label,
+.update__movie .update__form .form__input label {
   display: block;
   font-size: 1.6rem;
   margin-bottom: 1rem;
 }
 .add__movie__container .add__movie__form input,
-.add__movie__container .add__movie__form select {
+.add__movie__container .add__movie__form select, .add__movie__container .update__form input,
+.add__movie__container .update__form select, .update__movie .add__movie__form input,
+.update__movie .add__movie__form select, .update__movie .update__form input,
+.update__movie .update__form select {
   height: 4rem;
   padding: 0.5rem;
 }
 .add__movie__container .add__movie__form input,
-.add__movie__container .add__movie__form select {
+.add__movie__container .add__movie__form select, .add__movie__container .update__form input,
+.add__movie__container .update__form select, .update__movie .add__movie__form input,
+.update__movie .add__movie__form select, .update__movie .update__form input,
+.update__movie .update__form select {
   width: 100%;
   border-radius: 0.5rem;
   border: none;
 }
-.add__movie__container .add__movie__form button {
+.add__movie__container .add__movie__form button, .add__movie__container .update__form button, .update__movie .add__movie__form button, .update__movie .update__form button {
   margin-top: 2.5rem;
-  cursor: pointer;
   padding: 1.5rem 6rem;
+}
+
+.results__title {
+  text-align: center;
+  margin: 5rem 0 8rem;
+}
+
+.results {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8rem;
+}
+
+.movie__details {
+  padding: 5rem 6rem;
+  background-color: #1b1a1e;
+}
+
+.results__movie,
+.movie__details {
+  max-width: 40rem;
+}
+.results__movie h4,
+.movie__details h4 {
+  color: #e7e5f1;
+  font-family: "Inter";
+  font-size: 4rem;
+  text-transform: none;
+  letter-spacing: 0.08rem;
+  margin-bottom: 1rem;
+}
+.results__movie .results__feature,
+.results__movie .movie__details__feature,
+.movie__details .results__feature,
+.movie__details .movie__details__feature {
+  color: #e7e5f1;
+  font-family: "Inter";
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+}
+.results__movie .movie__details__feature--genre,
+.movie__details .movie__details__feature--genre {
+  text-transform: none;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+.results__movie .results__resume,
+.results__movie .movie__details__resume,
+.movie__details .results__resume,
+.movie__details .movie__details__resume {
+  margin: 3rem 0 5rem;
+  font-size: 1.5rem;
 }/*# sourceMappingURL=main.css.map */

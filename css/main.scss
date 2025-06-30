@@ -22,6 +22,10 @@ body {
   padding: 2rem;
 }
 
+button {
+  cursor: pointer;
+}
+
 // TEXT STYLES
 
 h1 {
@@ -30,6 +34,14 @@ h1 {
 
 .secondary__title {
   @include mixins.text-preset(secondary-title);
+}
+
+.third__title {
+  @include mixins.text-preset(third-title);
+}
+
+.italic__accent {
+  font-style: italic;
 }
 
 .primary__menu {
@@ -43,12 +55,25 @@ h1 {
 }
 
 .menu__link {
-    @include mixins.button-preset(menu-link);
+  @include mixins.button-preset(menu-link);
 
-    &:hover {
-      @include mixins.button-hover-preset(menu-link);
-    }
+  &:hover {
+    @include mixins.button-hover-preset(menu-link);
   }
+}
+
+.movie__link {
+  @include mixins.text-preset(movie-link);
+  text-decoration: none;
+  padding: 0.8rem;
+  border-bottom: 0.1rem solid variables.$milkyway;
+  font-weight: 700;
+  transition: all linear 0.3s;
+  &:hover {
+    color: variables.$ruby;
+    border-bottom: 0.1rem solid variables.$ruby;
+  }
+}
 
 // BUTTONS
 
@@ -57,6 +82,14 @@ h1 {
 
   &:hover {
     @include mixins.button-hover-preset(primary-button);
+  }
+}
+
+.secondary__button {
+  @include mixins.button-preset(secondary-button);
+
+  &:hover {
+    @include mixins.button-hover-preset(secondary-button);
   }
 }
 
@@ -93,7 +126,22 @@ header {
 .hero__section {
   align-self: center;
   @include mixins.flex-preset(column-start);
-  margin-top: 15%;
+  margin-top: 13%;
+  gap: 2rem;
+}
+
+.search__bar {
+  @include mixins.flex-preset(row-center);
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+#search {
+  width: 50rem;
+  height: 4rem;
+  border: none;
+  padding: 1rem;
+  border-radius: 2rem;
 }
 
 // MOVIES LIST CONTAINER
@@ -119,6 +167,10 @@ header {
   td {
     font-size: 1.8rem;
   }
+
+  .primary__button {
+    margin-right: 1rem;
+  }
 }
 
 .table__header {
@@ -126,15 +178,41 @@ header {
 }
 
 .movies__list__container {
-    .secondary__title {
-        margin-bottom: 5rem;
-    }
+  .secondary__title {
+    margin-bottom: 5rem;
+  }
   .primary__button {
     margin-top: 5rem;
   }
 }
 
-// ADD MOVIE FORM
+// UPDATE MOVIE PAGE
+
+.update__movie {
+  @include mixins.flex-preset(column-center);
+  margin: 3rem 0 8rem;
+
+  .secondary__title {
+    margin: 5rem;
+  }
+}
+
+.update__text {
+  margin: 0 0 5rem;
+  text-align: center;
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  h5 {
+    font-size: 2.5rem;
+  }
+}
+
+// ADD MOVIE FORM + UPDATE MOVIE FORM
 
 .add__movie {
   margin: 8rem;
@@ -144,14 +222,14 @@ header {
   }
 }
 
-.add__movie__container {
+.add__movie__container, .update__movie {
   @include mixins.flex-preset(column-center);
 
-  .add__movie__form {
+  .add__movie__form, .update__form {
     @include mixins.flex-preset(column-center);
     gap: 1.5rem;
 
-    .add__movie__form,
+    .add__movie__form, .update__form,
     .form__input {
       width: 45rem;
 
@@ -165,7 +243,7 @@ header {
     input,
     select {
       height: 4rem;
-      padding: .5rem;
+      padding: 0.5rem;
     }
 
     input,
@@ -177,8 +255,55 @@ header {
 
     button {
       margin-top: 2.5rem;
-      cursor: pointer;
       padding: 1.5rem 6rem;
     }
+  }
+}
+
+// RESULTS PAGE AFTER SEARCH BAR
+
+.results__title {
+  text-align: center;
+  margin: 5rem 0 8rem;
+}
+
+.results {
+  @include mixins.flex-preset(row-center-start);
+  gap: 4rem;
+}
+
+.movie {
+  @include mixins.flex-preset(column-center);
+  margin: 8rem;
+}
+
+.movie__details {
+  padding: 5rem 6rem;
+  background-color: variables.$dark-matter;
+}
+
+.results__movie,
+.movie__details {
+  max-width: 40rem;
+  h4 {
+    @include mixins.text-preset(movie-title);
+    margin-bottom: 1rem;
+  }
+
+  .results__feature,
+  .movie__details__feature {
+    @include mixins.text-preset(feature);
+  }
+
+  .movie__details__feature--genre {
+    text-transform: none;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+  }
+
+  .results__resume,
+  .movie__details__resume {
+    margin: 3rem 0 5rem;
+    font-size: 1.5rem;
   }
 }
