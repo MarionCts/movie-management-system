@@ -79,3 +79,5 @@ $genres = $pdo->query("SELECT * FROM genres")->fetchAll();
         </form>
     </div>
 </div>
+
+<?php include 'includes/footer.php'; ?>

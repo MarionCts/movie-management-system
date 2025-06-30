@@ -325,6 +325,10 @@ header img {
   margin: 5rem 0 8rem;
 }
 
+.results__container {
+  margin-bottom: 12rem;
+}
+
 .results {
   display: flex;
   flex-direction: row;
@@ -381,4 +385,15 @@ header img {
 .movie__details .movie__details__resume {
   margin: 3rem 0 5rem;
   font-size: 1.5rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+footer a {
+  color: #e7e5f1;
 }/*# sourceMappingURL=main.css.map */

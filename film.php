@@ -37,3 +37,5 @@ $films = $stmt->fetchAll();
         </div>
     <?php endforeach; ?>
 </div>
+
+<?php include 'includes/footer.php'; ?>
