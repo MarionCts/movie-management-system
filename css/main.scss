@@ -1,0 +1,184 @@
+@use "mixins";
+@use "variables";
+
+// RESET CSS
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Inter", sans-serif;
+}
+
+// GENERAL
+
+body {
+  background-color: variables.$midnight;
+  color: variables.$milkyway;
+  padding: 2rem;
+}
+
+// TEXT STYLES
+
+h1 {
+  @include mixins.text-preset(primary-title);
+}
+
+.secondary__title {
+  @include mixins.text-preset(secondary-title);
+}
+
+.primary__menu {
+  list-style: none;
+  @include mixins.flex-preset(row-start);
+  gap: 0.5rem;
+
+  li a {
+    text-decoration: none;
+  }
+}
+
+.menu__link {
+    @include mixins.button-preset(menu-link);
+
+    &:hover {
+      @include mixins.button-hover-preset(menu-link);
+    }
+  }
+
+// BUTTONS
+
+.primary__button {
+  @include mixins.button-preset(primary-button);
+
+  &:hover {
+    @include mixins.button-hover-preset(primary-button);
+  }
+}
+
+// HEADER
+
+header {
+  position: relative;
+  @include mixins.flex-preset(row-start);
+  img {
+    height: 10rem;
+  }
+}
+
+.header__container {
+  @include mixins.flex-preset(column-start);
+  min-height: 100vh;
+}
+
+.header__container::after {
+  content: "";
+  background: url("../img/background.png");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+// HERO SECTION
+
+.hero__section {
+  align-self: center;
+  @include mixins.flex-preset(column-start);
+  margin-top: 15%;
+}
+
+// MOVIES LIST CONTAINER
+
+.movies__list__container {
+  margin: 0 0 5rem;
+  @include mixins.flex-preset(column-center);
+}
+
+// MOVIES LIST TABLE
+
+.movies__list {
+  @include mixins.flex-preset(column-center);
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 2rem;
+    font-size: 2.2rem;
+    text-align: left;
+  }
+
+  td {
+    font-size: 1.8rem;
+  }
+}
+
+.table__header {
+  border-bottom: solid 0.1rem variables.$milkyway;
+}
+
+.movies__list__container {
+    .secondary__title {
+        margin-bottom: 5rem;
+    }
+  .primary__button {
+    margin-top: 5rem;
+  }
+}
+
+// ADD MOVIE FORM
+
+.add__movie {
+  margin: 8rem;
+  .secondary__title {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+}
+
+.add__movie__container {
+  @include mixins.flex-preset(column-center);
+
+  .add__movie__form {
+    @include mixins.flex-preset(column-center);
+    gap: 1.5rem;
+
+    .add__movie__form,
+    .form__input {
+      width: 45rem;
+
+      label {
+        display: block;
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    input,
+    select {
+      height: 4rem;
+      padding: .5rem;
+    }
+
+    input,
+    select {
+      width: 100%;
+      border-radius: .5rem;
+      border: none;
+    }
+
+    button {
+      margin-top: 2.5rem;
+      cursor: pointer;
+      padding: 1.5rem 6rem;
+    }
+  }
+}

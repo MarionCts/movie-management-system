@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #26252d;
+  color: #e7e5f1;
+  padding: 2rem;
+}
+
+h1 {
+  color: #e7e5f1;
+  font-family: "Inter";
+  font-size: 8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.secondary__title {
+  color: #e7e5f1;
+  font-family: "Inter";
+  font-size: 6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.primary__menu {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+.primary__menu li a {
+  text-decoration: none;
+}
+
+.menu__link {
+  color: #e7e5f1;
+  font-family: "Inter";
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1.2rem 4rem;
+  font-weight: 800;
+  text-align: center;
+  border-radius: 2.5rem;
+  transition: all 0.3s linear;
+  border: none;
+}
+.menu__link:hover {
+  background-color: none;
+  border: none;
+  color: #b9072e;
+}
+
+.primary__button {
+  color: #e7e5f1;
+  font-family: "Inter";
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1.2rem 4rem;
+  font-weight: 800;
+  text-align: center;
+  border-radius: 2.5rem;
+  transition: all 0.3s linear;
+  border: solid 0.1rem #e7e5f1;
+}
+.primary__button:hover {
+  background-color: #b9072e;
+  border: solid 0.1rem #b9072e;
+  color: #e7e5f1;
+}
+
+header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+header img {
+  height: 10rem;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.header__container::after {
+  content: "";
+  background: url("../img/background.png");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.hero__section {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 15%;
+}
+
+.movies__list__container {
+  margin: 0 0 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movies__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-collapse: collapse;
+}
+.movies__list th,
+.movies__list td {
+  padding: 2rem;
+  font-size: 2.2rem;
+  text-align: left;
+}
+.movies__list td {
+  font-size: 1.8rem;
+}
+
+.table__header {
+  border-bottom: solid 0.1rem #e7e5f1;
+}
+
+.movies__list__container .secondary__title {
+  margin-bottom: 5rem;
+}
+.movies__list__container .primary__button {
+  margin-top: 5rem;
+}
+
+.add__movie {
+  margin: 8rem;
+}
+.add__movie .secondary__title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.add__movie__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.add__movie__container .add__movie__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.add__movie__container .add__movie__form .add__movie__form,
+.add__movie__container .add__movie__form .form__input {
+  width: 45rem;
+}
+.add__movie__container .add__movie__form .add__movie__form label,
+.add__movie__container .add__movie__form .form__input label {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.add__movie__container .add__movie__form input,
+.add__movie__container .add__movie__form select {
+  height: 4rem;
+  padding: 0.5rem;
+}
+.add__movie__container .add__movie__form input,
+.add__movie__container .add__movie__form select {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+}
+.add__movie__container .add__movie__form button {
+  margin-top: 2.5rem;
+  cursor: pointer;
+  padding: 1.5rem 6rem;
+}/*# sourceMappingURL=main.css.map */
