@@ -8,8 +8,6 @@ This project was developed to:
 
 - **Understand CRUD operations** (Create, Read, Update, Delete) using SQL.
 
-- **Build dynamic web pages** with PHP templating.
-
 - **Structure a PHP project** with clarity and separation of concerns.
 
 
@@ -46,8 +44,6 @@ Ce projet a été développé pour :
 
 - **Comprendre les opérations CRUD** (Créer, Lire, Mettre à jour, Supprimer) avec SQL.
 
-- **Construire des pages web dynamiques** avec du templating PHP.
-
 - **Structurer un projet PHP** de façon claire et maintenable.
 
 
@@ -60,7 +56,7 @@ Ce projet a été développé pour :
 
 - **Supprimer un film :** Supprimer définitivement un film de la base de données.
 
-- **Page dédiéeà un film :** Cliquer sur un film pour accéder à une page contenant tous ses détails.
+- **Page dédiée à un film :** Cliquer sur un film pour accéder à une page contenant tous ses détails.
 
 - **Design simple et navigation intuitive.**
 
