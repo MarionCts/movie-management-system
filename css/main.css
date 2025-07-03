@@ -237,6 +237,19 @@ header img {
   margin-top: 5rem;
 }
 
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.pagination .pagination__link {
+  color: #e7e5f1;
+  font-size: 1.5rem;
+}
+
 .update__movie {
   display: flex;
   flex-direction: column;

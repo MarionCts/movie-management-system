@@ -15,7 +15,15 @@
         </tr>
 
         <?php
-        $films = $pdo->query("SELECT f.id AS film_id, f.titre, f.realisateur, f.annee, f.resume, g.nom AS genre_nom FROM films f INNER JOIN genres g ON g.id = f.genre_id ORDER BY annee DESC")->fetchAll();
+        $nbFilmsPages = 5;
+        $allFilms = $pdo->query("SELECT * FROM films;")->fetchAll();
+        $films = $pdo->query("SELECT f.id AS film_id, f.titre, f.realisateur, f.annee, f.resume, g.nom AS genre_nom FROM films f INNER JOIN genres g ON g.id = f.genre_id ORDER BY annee DESC LIMIT $nbFilmsPages")->fetchAll();
+        $countFilms = count($allFilms);
+        $nbPages = [];
+        $countPages = $countFilms / $nbFilmsPages;
+        for ($i = 1; $i <= ceil($countPages); $i++) {
+            array_push($nbPages, $i);
+        };
         foreach ($films as $film):
         ?>
             <tr>
@@ -30,7 +38,11 @@
             </tr>
         <?php endforeach; ?>
     </table>
-
+    <div class="pagination">
+        <?php foreach ($nbPages as $page): ?>
+            <a href="index.php?page=<?= htmlspecialchars($page) ?>" class="pagination__link"><?= htmlspecialchars($page) ?></a>
+        <?php endforeach; ?>
+    </div>
     <a href="ajouter.php" class="primary__button">➕ Ajouter un film</a>
 
 </div>

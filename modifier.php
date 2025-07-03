@@ -4,6 +4,10 @@ include "includes/db.php";
 include "includes/header.php";
 include "includes/menu.php";
 
+$sql = "SELECT * FROM films WHERE id = :id;";
+$stmt = $pdo->prepare($sql);
+$stmt->execute(['id' => $_GET['id']]);
+
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = (int) $_GET['id'];
 

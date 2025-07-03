@@ -186,6 +186,17 @@ header {
   }
 }
 
+.pagination {
+  margin-top: 2rem;
+  @include mixins.flex-preset(row-center);
+  gap: 1rem;
+
+  .pagination__link {
+    color: variables.$milkyway;
+    font-size: 1.5rem;
+  }
+}
+
 // UPDATE MOVIE PAGE
 
 .update__movie {

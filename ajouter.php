@@ -40,7 +40,7 @@ if (!empty($_POST) && isset($_POST['button__add'])) {
 };
 
 $films = $pdo->query("SELECT * FROM films f INNER JOIN genres g ON g.id = f.genre_id ORDER BY annee DESC")->fetchAll();
-$genres = $pdo->query("SELECT * FROM genres")->fetchAll();
+$genres = $pdo->query("SELECT * FROM genres")->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -66,7 +66,8 @@ $genres = $pdo->query("SELECT * FROM genres")->fetchAll();
                 <label for="genre">Genre</label>
                 <select name="genre" id="genre">
                     <?php foreach ($genres as $genre): ?>
-                        <option value="<?= htmlspecialchars($genre["id"]) ?>"><?= htmlspecialchars($genre["nom"]) ?></option>
+                        <option value="<?= htmlspecialchars($genre["id"]) ?>"><?= htmlspecialchars($genre["nom"]) ?>
+                        </option>
                     <?php endforeach; ?>
                 </select>
             </div>
