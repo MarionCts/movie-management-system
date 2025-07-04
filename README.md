@@ -1,3 +1,5 @@
+![](./screenshot.png)
+
 ## [ENGLISH VERSION]
 
 ### 🎯 Learning Goals
@@ -68,9 +70,3 @@ Ce projet a été développé pour :
 - MySQL avec PDO
 
 - HTML & CSS/SCSS
-
-
-
-### Screenshot
-
-![](./screenshot.png)
